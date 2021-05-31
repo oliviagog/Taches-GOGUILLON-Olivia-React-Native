@@ -1,30 +1,23 @@
 import React, { useState } from 'react';
-import { KeyboardAvoidingView, StyleSheet, Text, View, TextInput, TouchableOpacity, Keyboard, ScrollView, PlatformColor } from 'react-native';
+import {StyleSheet, Text, View, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 import Task from './components/taches';
 
 export default function App() {
   const[task,setTask] = useState();
-  const handleAddTask = () =>{
+
+  const AddTache = () =>{
     console.log(task);
   }
 
   return (
     <View style={styles.container}>
-      {/* Added this scroll view to enable scrolling when list gets longer than the page */}
-      <ScrollView
-        contentContainerStyle={{
-          flexGrow: 1
-        }}
-        keyboardShouldPersistTaps='handled'
-      >
-
-        {/* Today's Tasks */}
-        <View style={styles.tasksWrapper}>
-          <Text style={styles.sectionTitle}>Today's tasks</Text>
-          <View style={styles.items}>
-            {/* This is where the tasks will go! */}
+      <ScrollView>
+        <View style={styles.lestaches}>
+          <Text style={styles.Title}>Tâches à faire</Text>
+          <View style={styles.tache}>
             {
-              <Task text={'Task'}/>
+              <Task text={'Rendre le projet'}/>
+       
 }
           </View>
         </View>
@@ -32,8 +25,8 @@ export default function App() {
       </ScrollView>
 
       <TextInput style={styles.input} placeholder={'Ecrire une tâche'} value={task} onChangeText={text => setTask(text)}/>
-      <TouchableOpacity onPress={() => handleAddTask()}>
-      <View style={styles.addWrapper}>
+      <TouchableOpacity onPress={() => AddTache()}>
+      <View style={styles.add}>
         <Text style={styles.addText}>+</Text>
       </View>
       </TouchableOpacity>
@@ -45,17 +38,17 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#E8EAED',
+    backgroundColor: '#B0E0E6',
   },
-  tasksWrapper: {
-    paddingTop: 80,
+  lestaches: {
+    paddingTop: 40,
     paddingHorizontal: 20,
   },
-  sectionTitle: {
+  Title: {
     fontSize: 24,
     fontWeight: 'bold'
   },
-  items: {
+  tache: {
     marginTop: 30,
   },
   writeTaskWrapper: {
@@ -75,8 +68,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     width: 250,
   },
-  addWrapper: {
-    width: 60,
+  add: {
+    width: 30,
     height: 60,
     backgroundColor: '#FFF',
     borderRadius: 60,
