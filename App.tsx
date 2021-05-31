@@ -51,14 +51,6 @@ const styles = StyleSheet.create({
   tache: {
     marginTop: 30,
   },
-  writeTaskWrapper: {
-    position: 'absolute',
-    bottom: 60,
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center'
-  },
   input: {
     paddingVertical: 15,
     paddingHorizontal: 15,
@@ -69,7 +61,7 @@ const styles = StyleSheet.create({
     width: 250,
   },
   add: {
-    width: 30,
+    width: 800,
     height: 60,
     backgroundColor: '#FFF',
     borderRadius: 60,
@@ -77,6 +69,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderColor: '#C0C0C0',
     borderWidth: 1,
+    textAlign:'center'
   },
-  addText: {},
+  addText: {
+    
+  },
 });
